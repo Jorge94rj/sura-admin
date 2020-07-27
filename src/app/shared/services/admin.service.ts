@@ -105,12 +105,11 @@ export class AdminService {
 
     //delete items with relationship
     deleteRelatedCollectionByParentId(collection, relatedField, parentId) {
-        this._database.collection(collection).ref.where(relatedField, "==", parentId).get().then(
+        this.getItemsWithRelationship(collection, relatedField, parentId).then(
             result => {
                 result.forEach(
                     async doc => {
-                        console.log('RELATED_DATA', doc.id);
-                        //await this.deleteItem(collection, doc.id);
+                        await this.deleteItem(collection, doc.id);
                     }
                 );
             }

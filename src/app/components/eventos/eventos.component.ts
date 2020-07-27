@@ -165,7 +165,7 @@ export class EventosComponent implements OnInit {
 
   //delete subcollection
   deleteItinerarios(itemSelectedId) {
-    this._adminService.getItemsWithRelationship(this.collectionRelatedName,
+    this._adminService.deleteRelatedCollectionByParentId(this.collectionRelatedName,
       this.relatedField, itemSelectedId);
   }
 }
