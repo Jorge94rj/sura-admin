@@ -24,20 +24,13 @@ import { LoginComponent } from './components/login/login.component';
 import { PanelComponent } from './components/panel/panel.component';
 
 //firebase
+import { firebaseConfig } from './firebase.config';
+
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireStorageModule } from "angularfire2/storage";
-
-const config = {
-  apiKey: "AIzaSyA8z3MU_XvgW4WnddejtoIEklLbUvmkh2I",
-  authDomain: "suraapp-e18e3.firebaseapp.com",
-  databaseURL: "https://suraapp-e18e3.firebaseio.com",
-  projectId: "suraapp-e18e3",
-  storageBucket: "suraapp-e18e3.appspot.com",
-  messagingSenderId: "163347150648"
-};
 
 import { LoginService } from './components/login/login.service';
 import { SectionService } from './components/panel/section.service';
@@ -91,7 +84,7 @@ import { ItinerariosComponent } from './components/itinerarios/itinerarios.compo
     MatDialogModule,
     MatDividerModule,
     FormsModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
