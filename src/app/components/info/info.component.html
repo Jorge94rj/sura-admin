@@ -1,0 +1,41 @@
+<form class="header-opc">
+    <mat-form-field class="item-ho">
+        <mat-label>Buscar sección</mat-label>
+        <input matInput placeholder="ej. hoteles" [(ngModel)]="collectionName" name="collection"/>
+    </mat-form-field>
+    <button mat-mini-fab class="icon-ho" (click)="search()">
+        <mat-icon>search</mat-icon>
+    </button>
+</form>
+<div *ngIf="hasItems" class="btn-header">
+    <mat-label class="item-bh">Agregar nuevo elemento a {{collectionName}}</mat-label>
+    <button mat-mini-fab class="icon-bh" (click)="createItem()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let item of items; let i = index">
+        <mat-card class="item">
+            <mat-card-title class="title">{{item.data.nombre}}</mat-card-title>
+            <mat-card-content>
+                <div class="body">
+                    <img class="img" src="{{item.data.imagen?item.data.imagen:item.data.foto}}" />
+                </div>
+                <div class="footer">
+                    <button mat-mini-fab class="btn-attach" (click)="linkImage(i)">
+                        <mat-icon>attach_file</mat-icon>
+                    </button>
+                    <button mat-mini-fab class="btn-edit" (click)="editItem(i)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-mini-fab class="btn-delete" (click)="deleteItem(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

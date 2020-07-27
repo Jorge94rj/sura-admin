@@ -1,0 +1,79 @@
+@import '../../variables.scss';
+
+.container {
+  position: absolute;
+  top: $gutter * 8;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background: $color-light;
+}
+
+.side-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $gutter * 32;
+  background: $color-gray;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $color-green;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card {
+    max-width: $gutter * 50;
+}
+
+
+.side-options {
+  // margin-top: $gutter * 2;
+  text-align: center;
+  .btn-opc {
+    // margin-bottom: $gutter;
+    border-radius: 0;
+    width: 100%;
+    height: $gutter * 6;
+    border-bottom: 1px solid $color-gray-dark;
+    background: $color-gray-light;
+    color: $color-gray-dark;
+  }
+  .btn-opc-active {
+    // margin-bottom: $gutter;
+    border-radius: 0;
+    width: 100%;
+    height: $gutter * 6;
+    background: $color-gray-dark;
+    color: $color-gray-light;
+  }
+}
+
+
+.btn-exit {
+  position: fixed;
+  right: 0;
+}
+
+.logo {
+    display: block;
+    width: $gutter * 6;
+    height: $gutter * 6;
+    margin-right: $gutter;
+    border-radius: 100%;
+    background: white;
+}
+
+.main-content {
+    margin: $gutter * 2;
+}

@@ -1,0 +1,24 @@
+<div class="btn-header">
+    <mat-label class="item-bh">Agregar imagen</mat-label>
+    <button mat-mini-fab class="icon-bh" (click)="addGaleriaItem()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let image of images; let i = index">
+        <mat-card class="item">
+            <mat-card-title class="title">{{image.data.nombre}}</mat-card-title>
+            <mat-card-content>
+                <div class="body">
+                    <img class="img" src="{{image.data.imagenUrl}}" />
+                </div>
+                <div class="footer">
+                    <button mat-mini-fab class="btn-delete" (click)="deleteGaleriaItem(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

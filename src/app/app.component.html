@@ -1,0 +1,9 @@
+<ng-container *ngIf="!checkToken()">
+  <app-login></app-login>
+</ng-container>
+
+<ng-container *ngIf="checkToken()">
+  <app-panel></app-panel>
+</ng-container>
+
+<router-outlet></router-outlet>
